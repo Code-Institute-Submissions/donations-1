@@ -15,7 +15,11 @@ FIELDS = {'funding_status': True, 'school_state': True, 'resource_type': True, '
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index1.html")
+
+@app.route("/new")
+def new():
+    return render_template("index_layout.html")
 
 
 @app.route("/donorsUS/projects")

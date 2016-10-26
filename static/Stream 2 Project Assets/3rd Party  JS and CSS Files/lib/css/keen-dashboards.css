@@ -28,7 +28,7 @@ body.application hr {
 
 
 .navbar-inverse {
-  background-color: black;
+  background-color: #3d4a57;
   border-color: #333;
 }
 .navbar-inverse .navbar-nav > li > a,
@@ -38,8 +38,8 @@ body.application hr {
 }
 
 .chart-wrapper {
-  background: #595959 !important;
-  border: 1px solid #595959 !important;
+  background: #fff;
+  border: 1px solid #e2e2e2;
   border-radius: 3px;
   margin-bottom: 10px;
 }
@@ -52,7 +52,7 @@ body.application hr {
 }
 
 .chart-wrapper .chart-stage {
-  min-height: 95px !important;
+  /*min-height: 240px;*/
   overflow: hidden;
   padding: 5px 10px;
   position: relative;
