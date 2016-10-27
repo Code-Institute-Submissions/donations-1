@@ -52,9 +52,12 @@
             background-color: #333333;
 ;
         }
-        body{
+        body {
             background-color: #595959;
         }
+
+        .row-bottom-margin { margin-bottom:0px; }
+
     </style>
 </head>
 <body>
@@ -139,7 +142,7 @@
 {#            </div>#}
 {#            <div class="container-fluid">#}
         <div class = "conainer">
-                  <div class="col-sm-4">
+                  <div class="col-sm-3 row-bottom-margin">
            <div class="chart-wrapper">
                <div class="chart-title">
                    Poverty Level
@@ -150,7 +153,7 @@
            </div>
        </div>
 
-               <div class="col-sm-4">
+               <div class="col-sm-3 row-bottom-margin">
                    <div class="chart-wrapper">
                        <div class="chart-title">
                            Resources Type
@@ -160,10 +163,68 @@
                        </div>
                    </div>
                </div>
+
+
                <!-- Resources -->
 
+                   <div class="col-sm-6">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Donation State Map
+               </div>
+               <div class="chart-stage">
+                   <div id="funding-map"></div>
+               </div>
+           </div>
+       </div>
 
-           <div class="col-sm-3">
+
+
+
+
+
+           <div class="col-sm-6 row-bottom-margin">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Number of Donations
+                       </div>
+                       <div class="chart-stage">
+                           <div id="time-chart"></div>
+                       </div>
+                   </div>
+               </div>
+
+
+                  <!-- funding Pie -->
+               <div class="col-sm-4 row-bottom-margin">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                           Funding Status
+                       </div>
+                       <div>
+                       <div class="chart-stage">
+                           <div id="funding-chart"></div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+{#               <!-- funding Pie -->#}
+{#               <div class="col-sm-3">#}
+{#                   <div class="chart-wrapper">#}
+{#                       <div class="chart-title">#}
+{#                           Funding Status#}
+{#                       </div>#}
+{#                       <div class="chart-stage">#}
+{#                           <div id="funding-chart"></div>#}
+{#                       </div>#}
+{#                   </div>#}
+{#               </div>#}
+{#           </div>#}
+{#       </div>#}
+
+
+           <div class="col-sm-3 row-bottom-margin">
            <div class="chart-wrapper">
                <div class="chart-title">
                    Total Number of Donations
@@ -178,12 +239,15 @@
                    padding-bottom: 0px;">
                    <div id="number-projects-nd"></div>
                </div>
-           </div><br>
-{#       </div>#}
+           </div>
+
+
+
+     </div>
 {#       <!-- Metric 1 -->#}
 {##}
 {#       <!-- Metric 2 -->#}
-{#       <div class="col-sm-4">#}
+      <div class="col-sm-3">
            <div class="chart-wrapper">
                <div class="chart-title">
                    Total Donations in USD
@@ -198,31 +262,10 @@
 
 
 
-           <div class="col-sm-12">
-                   <div class="chart-wrapper">
-                       <div class="chart-title">
-                           Number of Donations
-                       </div>
-                       <div class="chart-stage">
-                           <div id="time-chart"></div>
-                       </div>
-                   </div>
-               </div>
 
-               <!-- funding Pie -->
-               <div class="col-sm-6">
-                   <div class="chart-wrapper">
-                       <div class="chart-title">
-                           Funding Status
-                       </div>
-                       <div class="chart-stage">
-                           <div id="funding-chart"></div>
-                       </div>
-                   </div>
-               </div>
-{#           </div>#}
-{#       </div>#}
 
+{#    </div>#}
+{#    </div>#}
 
         <!-- menu select -->
        <div class="col-sm-6">
@@ -235,9 +278,22 @@
                </div>
            </div>
        </div>
+
+
+{#             <div class="col-sm-6">#}
+{#           <div class="chart-wrapper">#}
+{#               <div class="chart-title">#}
+{#                   Donation County#}
+{#               </div>#}
+{#               <div class="chart-stage">#}
+{#                   <div id="menu-county-select"></div>#}
+{#               </div>#}
+{#           </div>#}
+{#       </div>#}
+
     </div>
     </div>
-{#    </div>#}
+    </div>
        <!-- menu select -->
 
        <!-- Metric 1 -->
