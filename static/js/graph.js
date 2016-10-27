@@ -47,6 +47,10 @@ function makeGraphs(error, projectsJson, statesJson) {
        return d["school_county"];
    });
 
+       var districtDim = ndx.dimension(function (d) {
+       return d["school_district"];
+   });
+
    //Calculate metrics
    var numProjectsByDate = dateDim.group();
    var numProjectsByResourceType = resourceTypeDim.group();
@@ -55,11 +59,16 @@ function makeGraphs(error, projectsJson, statesJson) {
    var totalDonationsByState = stateDim.group().reduceSum(function (d) {
        return d["total_donations"]
          });
-       var totalDonationsByCounty = countyDim.group().reduceSum(function (d) {
+    var totalDonationsByCounty = countyDim.group().reduceSum(function (d) {
        return d["total_county_donations"]
+   });
+
+    var totalDonationsByDistrict = districtDim.group().reduceSum(function (d) {
+        return d["total_district_donations"]
    });
    var stateGroup = stateDim.group();
     var countyGroup = countyDim.group();
+     var districtGroup = districtDim.group();
 
 
    var all = ndx.groupAll();
@@ -68,6 +77,10 @@ function makeGraphs(error, projectsJson, statesJson) {
    });
    var total_county_Donations = ndx.groupAll().reduceSum(function (d) {
        return d["total_county_donations"];
+   });
+
+    var total_county_Donations = ndx.groupAll().reduceSum(function (d) {
+           return d["total_district_donations"];
    });
    var max_state = totalDonationsByState.top(1)[0].value;
 
@@ -93,6 +106,10 @@ function makeGraphs(error, projectsJson, statesJson) {
       selectField = dc.selectMenu('#menu-county-select')
        .dimension(countyDim)
        .group(countyGroup);
+
+    selectField = dc.selectMenu('#menu-district-select')
+       .dimension(districtDim)
+       .group(districtGroup);
 
 
    numberProjectsND
