@@ -43,7 +43,9 @@ function makeGraphs(error, projectsJson, statesJson) {
        return d["funding_status"];
    });
 
-
+   var countyDim = ndx.dimension(function (d) {
+       return d["school_county"];
+   });
 
    //Calculate metrics
    var numProjectsByDate = dateDim.group();
@@ -51,16 +53,22 @@ function makeGraphs(error, projectsJson, statesJson) {
    var numProjectsByPovertyLevel = povertyLevelDim.group();
    var numProjectsByFundingStatus = fundingStatus.group();
    var totalDonationsByState = stateDim.group().reduceSum(function (d) {
-       return d["total_donations"];
+       return d["total_donations"]
+         });
+       var totalDonationsByCounty = countyDim.group().reduceSum(function (d) {
+       return d["total_county_donations"]
    });
    var stateGroup = stateDim.group();
+    var countyGroup = countyDim.group();
 
 
    var all = ndx.groupAll();
    var totalDonations = ndx.groupAll().reduceSum(function (d) {
        return d["total_donations"];
    });
-
+   var total_county_Donations = ndx.groupAll().reduceSum(function (d) {
+       return d["total_county_donations"];
+   });
    var max_state = totalDonationsByState.top(1)[0].value;
 
    //Define values (to be used in charts)
@@ -81,6 +89,10 @@ function makeGraphs(error, projectsJson, statesJson) {
    selectField = dc.selectMenu('#menu-select')
        .dimension(stateDim)
        .group(stateGroup);
+
+      selectField = dc.selectMenu('#menu-county-select')
+       .dimension(countyDim)
+       .group(countyGroup);
 
 
    numberProjectsND
