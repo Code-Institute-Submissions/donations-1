@@ -1,1 +1,1 @@
-web: gunicorn Donations:apppwd
+web: gunicorn Donations:app
