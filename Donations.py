@@ -4,7 +4,7 @@ from pymongo import MongoClient
 import json
 
 app = Flask(__name__)
-Mongo_URI = os.getenv('MONGODB_URI')
+MONGO_URI = os.getenv('MONGODB_URI')
 MONGODB_HOST = 'ds139187.mlab.com'
 MONGODB_PORT = 39187
 DBS_NAME = 'heroku_rbcnq8cq'
