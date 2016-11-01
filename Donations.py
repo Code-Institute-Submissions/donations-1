@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from pymongo import MongoClient
 import json
+import os
 
 app = Flask(__name__)
 MONGO_URI = os.getenv('MONGODB_URI')
